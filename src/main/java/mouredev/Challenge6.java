@@ -1,4 +1,4 @@
-package org.example;
+package mouredev;
 /*Reto #6
 INVIRTIENDO CADENAS
 Dificultad: FÁCIL
