@@ -1,4 +1,4 @@
-package org.example;
+package mouredev;
 /* * Reto #7
 CONTANDO PALABRAS
 Dificultad: MEDIA
