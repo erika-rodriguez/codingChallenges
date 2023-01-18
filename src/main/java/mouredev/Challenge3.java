@@ -1,4 +1,4 @@
-package org.example;
+package mouredev;
 
 public class Challenge3 {
 /*    Reto #3
