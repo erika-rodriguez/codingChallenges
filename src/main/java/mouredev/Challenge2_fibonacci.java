@@ -1,6 +1,6 @@
 package mouredev;
 
-public class Challenge2 {
+public class Challenge2_fibonacci {
     /*Reto #2
 LA SUCESIÓN DE FIBONACCI
 Dificultad: DIFÍCIL

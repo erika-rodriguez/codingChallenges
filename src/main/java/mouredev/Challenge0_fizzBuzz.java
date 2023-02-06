@@ -1,6 +1,6 @@
 package mouredev;
 
-public class Challenge0 {
+public class Challenge0_fizzBuzz {
     /* Reto #0
 EL FAMOSO "FIZZ BUZZ"
 Dificultad: FÁCIL
