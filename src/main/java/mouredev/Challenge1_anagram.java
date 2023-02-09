@@ -1,6 +1,6 @@
 package mouredev;
 
-public class Challenge1 {
+public class Challenge1_anagram {
     /*Reto #1
 ¿ES UN ANAGRAMA?
 Dificultad: MEDIA
