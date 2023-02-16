@@ -13,8 +13,9 @@ For n = 239017, the output should be
 solution(n) = false.*/
 public class IsLucky {
     public static void main(String[] args) {
-        solution(134008);
-        solution(1280);
+        //solution(134008);
+        //solution(1280);
+        System.out.println(isLuckyNumberSolution(134008));
     }
     static boolean solution(int n) {
         //convert int to string
@@ -40,6 +41,19 @@ public class IsLucky {
 
         return false;
 
+    }
+
+    public static boolean isLuckyNumberSolution(int n) {
+        String ticket = n + "";
+        int sum = 0;
+        int size = ticket.length();
+        for (int letter = 0; letter < size / 2; letter++) {
+            int leftNumbers = ticket.charAt(letter);//starts at 0
+            int rightNumbers = ticket.charAt(size - letter - 1);//starts at the last index
+            sum += leftNumbers - rightNumbers;
+        }
+
+        return sum == 0;
     }
 
     /*Best solution
