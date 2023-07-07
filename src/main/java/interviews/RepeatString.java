@@ -19,7 +19,7 @@ package interviews;
  */
 public class RepeatString {
     public static void main (String[] args){
-        solutionQ2("3[a]4[b]");
+        solutionQ3("3[a2[b]]");
     }
 
     //solution Q1
@@ -29,9 +29,9 @@ public class RepeatString {
         int repeater=Character.getNumericValue(charArray[openIndex-1]);
         int closeIndex=input.indexOf("]");
 
-        String sequence=input.substring(openIndex+1,closeIndex);
+        String sequenceToRepeat=input.substring(openIndex+1,closeIndex);
 
-        return sequence.repeat(repeater);
+        return sequenceToRepeat.repeat(repeater);
     }
 
     //solution Q2
@@ -41,9 +41,27 @@ public class RepeatString {
             int closeIndex=input.indexOf("]");
             int repeater=Character.getNumericValue(input.charAt(openIndex-1));
 
-            String sequence=input.substring(openIndex+1,closeIndex);
-            input=input.replace(input.substring(openIndex-1,closeIndex+1),sequence.repeat(repeater));
+            String sequenceToRepeat=input.substring(openIndex+1,closeIndex);
+            input=input.replace(input.substring(openIndex-1,closeIndex+1),sequenceToRepeat.repeat(repeater));
         }
         System.out.println(input);
     }
+
+    //solution Q3
+    public static void solutionQ3(String input){
+
+        while(input.contains("[")){
+            int openIndex=input.lastIndexOf("[");
+            int closeIndex=input.indexOf("]",openIndex);
+            int repeater=Character.getNumericValue(input.charAt(openIndex-1));
+
+            String sequenceToRepeat=input.substring(openIndex+1,closeIndex);
+
+            //replace the sequence to repeat by the solved string
+            input=input.replace(input.substring(openIndex-1,closeIndex+1),sequenceToRepeat.repeat(repeater));
+
+            System.out.println(input);
+        }
+    }
+
 }
