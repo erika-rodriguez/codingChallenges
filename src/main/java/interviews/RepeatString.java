@@ -12,12 +12,14 @@ package interviews;
  * ## input => "3[a2[b]]"
  * ## interim output => "3[abb]"
  * ## output => "abbabbabb"
- *
- *input=> 3[a2[d]f]f[f]
+ *# Q4
+ *## input=> 3[a2[d]f]f[f]
+ *## interim output => 3[addf]f[f]
+ * ## output => addfaddfaddfff
  */
 public class RepeatString {
     public static void main (String[] args){
-        System.out.println(solutionQ1("3[asd]"));
+        solutionQ2("3[a]4[b]");
     }
 
     //solution Q1
@@ -30,5 +32,18 @@ public class RepeatString {
         String sequence=input.substring(openIndex+1,closeIndex);
 
         return sequence.repeat(repeater);
+    }
+
+    //solution Q2
+    public static void solutionQ2(String input){
+        while (input.contains("[")){
+            int openIndex=input.indexOf("[");
+            int closeIndex=input.indexOf("]");
+            int repeater=Character.getNumericValue(input.charAt(openIndex-1));
+
+            String sequence=input.substring(openIndex+1,closeIndex);
+            input=input.replace(input.substring(openIndex-1,closeIndex+1),sequence.repeat(repeater));
+        }
+        System.out.println(input);
     }
 }
