@@ -6,31 +6,29 @@ import java.util.stream.Stream;
 
 /*Given 2 Strings, check if they are anagrams of each other. Return a boolean
 Un Anagrama consiste en formar una palabra reordenando TODAS las letras de otra palabra inicial.
-Dos palabras exactamente iguales no son anagrama*/
+Dos palabras exactamente iguales no son anagrama
+LISTEN - > SILENT
+HEART - > EARTH
+LIVES - > ELVIS
+KEEP -> PEEK
+TABLE - >BLEAT*/
 public class Anagram {
     public static void main(String[] args) {
-        //System.out.println(solution("triangle", "integral"));
+        System.out.println(solution("listen", "silent"));
         //System.out.println(solutionWithSort("triangle", "integral"));
-        System.out.println(solutionWithStream("odofi", "fodoe"));
+        //System.out.println(solutionWithStream("odofi", "fodoe"));
     }
 
     public static boolean  solution(String a, String b){
-        boolean isAnagram=false;
-        if (a.length()!=b.length()){
-            return isAnagram;
-        } else if (a.equals(b)) {
-            return isAnagram;
-        }else{
-            for (int i = 0; i < a.length(); i++) {
-
-                if (a.contains(b.substring(i))){
-                    isAnagram=true;
-                }else {
-                    isAnagram=false;
-                }
-            }
+        if ((a.length()!=b.length())||(a.equals(b))){
+            return false;
+        } else{
+            char[] arrayA=a.toLowerCase().toCharArray();
+            Arrays.sort(arrayA);
+            char[] arrayB=a.toLowerCase().toCharArray();
+            Arrays.sort(arrayB);
+            return Arrays.equals(arrayA,arrayB);
         }
-        return isAnagram;
     }
 
     public static boolean  solutionWithSort(String a, String b){
