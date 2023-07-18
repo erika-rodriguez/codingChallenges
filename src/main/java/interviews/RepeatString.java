@@ -19,7 +19,7 @@ package interviews;
  */
 public class RepeatString {
     public static void main (String[] args){
-        solutionQ3("3[a2[b]]");
+        solutionQ4("3[a2[d]f]f[f]");
     }
 
     //solution Q1
@@ -61,6 +61,31 @@ public class RepeatString {
             input=input.replace(input.substring(openIndex-1,closeIndex+1),sequenceToRepeat.repeat(repeater));
 
             System.out.println(input);
+        }
+    }
+
+    //solution Q4
+    public static void solutionQ4(String input){
+        //3[a2[d]f]f[f]
+        while (input.contains("[")){
+            int openIndex=input.lastIndexOf("[");
+            int closeIndex=input.indexOf("]",openIndex);//Returns the index within this string of the first occurrence of the specified substring, starting at the specified index.
+            try{
+                int repeater=  Integer.parseInt(input,openIndex-1);
+                System.out.println("repeater"+repeater);
+                String sequence=input.substring(openIndex+1,closeIndex);
+
+                input=input.replace(input.substring(openIndex-1,closeIndex+1), sequence.repeat(repeater));
+
+                System.out.println(input);
+
+            }catch(NumberFormatException e){
+                continue;
+            }
+
+
+
+
         }
     }
 
