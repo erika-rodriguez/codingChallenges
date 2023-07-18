@@ -45,4 +45,19 @@ public class TwoSum {
         }
         return new int[]{};
     }
+
+    //AI solution
+    public static int[] findTwoSum(int[] numbers, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < numbers.length; i++) {
+            int complement = target - numbers[i];
+            if (map.containsKey(complement)) {
+                return new int[] {map.get(complement), i};
+            }
+            map.put(numbers[i], i);
+        }
+
+        throw new IllegalArgumentException("No two numbers add up to the target value.");
+    }
 }
