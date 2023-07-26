@@ -88,5 +88,62 @@ public class RepeatString {
 
         }
     }
+/*
+  The expandString method recursively expands the given input string.
+  It iterates over the characters in the input and handles two cases:
+        If the character is a digit, it extracts the count and the substring within the brackets. It then recursively expands the substring and appends it to the result the specified number of times.
+        If the character is not a digit, it is directly appended to the result.
 
+  The findClosingBracket method is a helper function that finds the index of the corresponding closing bracket for a given opening bracket index.
+  You can use the expandString method to process your input strings and obtain the desired output.
+ */
+
+    public static String expandString(String input) {
+        StringBuilder result = new StringBuilder();
+        int i = 0;
+        while (i < input.length()) {
+            char ch = input.charAt(i);//gets the char en i
+            if (Character.isDigit(ch)) {//if it is a number
+                int count = ch - '0';
+                int start = input.indexOf('[', i);
+                int end = findClosingBracket(input, start);
+                String substring = input.substring(start + 1, end);
+                String expanded = expandString(substring);
+
+                for (int j = 0; j < count; j++) {
+                    result.append(expanded);
+                }
+
+                i = end + 1;
+            } else {
+                result.append(ch);
+                i++;
+            }
+        }
+        return result.toString();
+    }
+
+    public static int findClosingBracket(String input, int start) {
+        int count = 0;
+        for (int i = start; i < input.length(); i++) {
+            if (input.charAt(i) == '[') {
+                count++;
+            } else if (input.charAt(i) == ']') {
+                count--;
+                if (count == 0) {
+                    return i;
+                }
+            }
+        }
+        return -1;  // Invalid input, closing bracket not found
+    }
 }
+
+
+
+
+
+
+
+
+
