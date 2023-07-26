@@ -16,7 +16,7 @@ se escribe todo a mano (clase, metodo, librerias, el main method, aunque tenés 
         */
 public class HasRepeatedNumbersArray {
     public static void main(String[] args) {
-        int[] a={9,8,1, 11, 3, 9, 2, 46, 23, 8, 33};
+        int[] a={9,8,1, 11, 2, 8};
         solution(a);
         functionalSolution(a);
     }
@@ -30,6 +30,7 @@ public class HasRepeatedNumbersArray {
      }
 
      public static boolean functionalSolution(int[] a){
+        //List<Integer> list=Arrays.asList(a);
         Set<Integer> noRepeated= Arrays.stream(a).boxed().collect(Collectors.toSet());
         if (a.length==noRepeated.size()){
             return false;
