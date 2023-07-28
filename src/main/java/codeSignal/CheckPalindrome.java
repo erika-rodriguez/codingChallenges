@@ -8,6 +8,9 @@ For inputString = "abac", the output should be solution(inputString) = false;
 For inputString = "a", the output should be solution(inputString) = true.
 * */
 public class CheckPalindrome {
+    public static void main(String[] args) {
+        System.out.println( solutionStringBuilder("madam"));
+    }
     boolean solution(String inputString) {
         String inversa="";
         for (int i = inputString.length(); i >0 ; i--) {
@@ -17,16 +20,7 @@ public class CheckPalindrome {
     }
 
     public static boolean solutionStringBuilder(String input){
-        StringBuilder reverse = new StringBuilder();
-        for (int i=input.length();i>0;i--){
-            reverse.append(input.charAt(i-1));
-            System.out.println(reverse);
-        }
-
-        if (input.equals(reverse.toString())){
-            return  true;
-        }else {
-            return false;
-        }
+        StringBuilder reverse = new StringBuilder(input).reverse();
+        return input.equals(reverse.toString());
     }
 }
