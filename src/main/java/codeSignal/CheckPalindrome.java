@@ -13,11 +13,20 @@ public class CheckPalindrome {
         for (int i = inputString.length(); i >0 ; i--) {
             inversa+=inputString.substring(i-1, i);
         }
-        if(inputString.equals(inversa)){
-            return true;
-        }
-
-        return false;
+        return inputString.equals(inversa);
     }
 
+    public static boolean solutionStringBuilder(String input){
+        StringBuilder reverse = new StringBuilder();
+        for (int i=input.length();i>0;i--){
+            reverse.append(input.charAt(i-1));
+            System.out.println(reverse);
+        }
+
+        if (input.equals(reverse.toString())){
+            return  true;
+        }else {
+            return false;
+        }
+    }
 }
