@@ -1,5 +1,7 @@
 package codeSignal;
-
+/*
+20th challenge, level 5
+ */
 public class ArrayMaximalAdjacentDifference {
     public static void main(String[] args) {
         System.out.println(solution(new int[]{2, 4, 1, 0}));
