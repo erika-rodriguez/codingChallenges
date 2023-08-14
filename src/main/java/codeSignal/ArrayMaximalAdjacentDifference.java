@@ -1,6 +1,11 @@
 package codeSignal;
 /*
 20th challenge, level 5
+Given an array of integers, find the maximal absolute difference between any two of its adjacent elements.
+
+Example
+For inputArray = [2, 4, 1, 0], the output should be
+solution(inputArray) = 3.
  */
 public class ArrayMaximalAdjacentDifference {
     public static void main(String[] args) {
