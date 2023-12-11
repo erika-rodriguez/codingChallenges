@@ -29,6 +29,21 @@ public class HasRepeatedNumbersArray {
          return true;
      }
 
+    public static boolean solutionWithSet(int[] a){
+        HashSet<Integer> set= new HashSet<>();
+        for(int e:a){ //fills the set
+            if(set.contains(e)){
+                return true;//has repeated numbers
+            }
+            else{
+                set.add(e);
+            }
+        }
+
+        return false;
+
+    }
+
      public static boolean functionalSolution(int[] a){
         //List<Integer> list=Arrays.asList(a);
         Set<Integer> noRepeated= Arrays.stream(a).boxed().collect(Collectors.toSet());
