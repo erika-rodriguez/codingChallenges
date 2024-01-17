@@ -9,10 +9,11 @@ If you can divide a number from array without remain you should replace that num
 public class FizzBuzz {
     public static void main(String[] args) {
 
-        //ArrayList<Integer> array=new ArrayList<>();
-        int[] array=new int[101];
-        for (int i=0; i<100;i++){
-            array[i]=i+1;
+        //create an array
+        int[] array=new int[100];
+        for (int i=1; i<101;i++){
+            array[i-1]=i;
+            //System.out.println(array[i-1]);
         }
         solution(array);
     }
